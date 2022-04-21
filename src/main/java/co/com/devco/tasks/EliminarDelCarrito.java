@@ -4,9 +4,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
-import net.serenitybdd.screenplay.actions.Open;
 
-import static co.com.devco.userinterfaces.DemoblazeCar.BOTON_ELIMINAR;
+import static co.com.devco.userinterfaces.DemoblazeCar.BUTTON_DELETE;
 import static co.com.devco.userinterfaces.DemoblazeIndexPage.*;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
@@ -26,7 +25,7 @@ public class EliminarDelCarrito implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(BUTTON_CAR),
-                Click.on(BOTON_ELIMINAR.of(objeto))
+                Click.on(BUTTON_DELETE.of(objeto))
         );
     }
 }

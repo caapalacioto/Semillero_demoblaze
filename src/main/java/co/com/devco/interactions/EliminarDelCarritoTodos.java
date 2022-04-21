@@ -6,8 +6,6 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.targets.Target;
 
-import javax.swing.text.AbstractDocument;
-
 import static co.com.devco.userinterfaces.DemoblazeCar.LINK_PRIMER_DELETE_PRODUCTOS_CARRITO;
 
 public class EliminarDelCarritoTodos implements Interaction{

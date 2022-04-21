@@ -3,23 +3,23 @@ package co.com.devco.tasks;
 import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
-import net.serenitybdd.screenplay.actions.Open;
+import net.serenitybdd.screenplay.actions.Click;
 
-import static co.com.devco.userinterfaces.DemoblazeIndexPage.*;
+import static co.com.devco.userinterfaces.DemoblazeIndexPage.BUTTON_CAR;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
 
-public class EntrarADemoblaze implements Task {
+public class EntrarAlCarrito implements Task {
 
-    public EntrarADemoblaze() { }
+    public EntrarAlCarrito() { }
 
-    public static Performable home() {
-        return instrumented(EntrarADemoblaze.class);
+    public static Performable deCompras() {
+        return instrumented(EntrarAlCarrito.class);
     }
 
     @Override
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
-                Open.url(DEMOBLAZE_HOME_PAGE)
+                Click.on(BUTTON_CAR)
         );
     }
 }
