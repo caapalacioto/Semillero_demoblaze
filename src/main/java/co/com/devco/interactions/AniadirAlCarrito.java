@@ -5,7 +5,6 @@ import net.serenitybdd.screenplay.Interaction;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 
-import static co.com.devco.userinterfaces.DemoblazeIndexPage.BUTTON_HOME;
 import static co.com.devco.userinterfaces.DemoblazePaginaProducto.BUTTON_ADD_TO_CART;
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
@@ -27,7 +26,7 @@ public class AniadirAlCarrito implements Interaction{
         for (int i = 0; i < numeroDeElementos; i++){
             actor.attemptsTo(
                     Click.on(BUTTON_ADD_TO_CART),
-                    WaitUntil.the(BUTTON_HOME, isVisible())
+                    WaitUntil.the(BUTTON_ADD_TO_CART, isVisible())
                    );
         }
     }

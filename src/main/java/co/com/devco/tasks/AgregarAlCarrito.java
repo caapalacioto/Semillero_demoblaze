@@ -5,9 +5,12 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Performable;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
+import net.serenitybdd.screenplay.waits.WaitUntil;
 
 import static co.com.devco.userinterfaces.DemoblazeIndexPage.*;
+import static co.com.devco.userinterfaces.DemoblazePaginaProducto.BUTTON_ADD_TO_CART;
 import static net.serenitybdd.screenplay.Tasks.instrumented;
+import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class AgregarAlCarrito implements Task {
     private String objeto;
@@ -30,6 +33,7 @@ public class AgregarAlCarrito implements Task {
     public <T extends Actor> void performAs(T actor) {
         actor.attemptsTo(
                 Click.on(BUTTON_HOME),
+                WaitUntil.the(LINK_PRODUCTO.of(objeto), isVisible()),
                 Click.on(LINK_PRODUCTO.of(objeto)),
                 AniadirAlCarrito.cantidad(cantidad)
         );
